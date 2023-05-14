@@ -57,7 +57,7 @@ source("func_start.R")
 source("func_M0.R")
 
 ## plot degradation paths=======================================================
-data = data_generation_M0(825,n,p,m,interval,gamma,mu_a,mu_b,Sigma_a,Sigma_b,Sigma_ab,sigma_D)
+data = data_generation_M0(12,n,p,m,interval,gamma,mu_a,mu_b,Sigma_a,Sigma_b,Sigma_ab,sigma_D)
 data_plot = data.frame(matrix(ncol = 4, nrow = 0))
 colnames(data_plot) = c("Unit","PC","Current_T","Current_Y")
 for (i in 1:n){
@@ -81,7 +81,7 @@ a = ggplot(data_plot,aes(x=Current_T,y=Current_Y,group=Unit:PC,colour=Unit,cex.l
   facet_grid(.~PC)+theme(panel.spacing.x = unit(1.1, "lines"),
                          legend.position="bottom",legend.box = "horizontal")+
   guides(colour = guide_legend(nrow = 1))+
-  theme(text = element_text(size = 25))
+  theme(text = element_text(size = 18))
 a
 
 ## simulation study=============================================================
